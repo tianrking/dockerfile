@@ -8,6 +8,7 @@ RUN apt-get update \
     && apt-get install git -y \
     && git clone -b manyuser https://github.com/breakwa11/shadowsocks.git \
     && cd shadowsocks/shadowsocks \
-    && chmod 777 server.py
+    && chmod 777 server.py \
+    && ifconfig
 WORKDIR "shadowsocks/shadowsocks" 
 RUN python server.py
