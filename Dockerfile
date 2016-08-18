@@ -10,4 +10,4 @@ RUN apt-get update \
     && cd shadowsocks/shadowsocks \
     && chmod 777 server.py
 WORKDIR "shadowsocks/shadowsocks" 
-ENTRYPOINT ["server.py"]
+RUN ["python server.py"]
