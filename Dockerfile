@@ -6,7 +6,8 @@ RUN apt-get update \
     && apt-get install python3 -y \
     && apt-get install python -y \
     && apt-get install git -y \
-    && git clone -b manyuser https://github.com/breakwa11/shadowsocks.git 
+    && git clone -b manyuser https://github.com/breakwa11/shadowsocks.git \
+    && cd shadowsocks/shadowsocks \
+    && chmod 777 server.py
 WORKDIR "shadowsocks/shadowsocks" 
-CMD chmod 777 server.py
 ENTRYPOINT ["server.py"]
