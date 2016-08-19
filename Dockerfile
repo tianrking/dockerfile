@@ -16,9 +16,8 @@ RUN apt-get update \
     && unzip master.zip \
     && apt-get install libnet1-dev -y \
     && apt-get install libpcap0.8-dev -y \
-    && cd master \
+    && cd net* \
     && sh build.sh -DCOOKED \
     && sh build.sh \
-    && nohup ./net_speeder venet0 "ip"  & \
     && ./net_speeder eth0 "ip" 
 EXPOSE 8388
