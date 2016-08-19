@@ -20,6 +20,6 @@ RUN apt-get update \
     && sh build.sh \
     && nohup ./net_speeder venet0 "ip" & \
     && nohup ./net_speeder eth0 "ip" & \
-    && cd ../ 
+    && cd ../ \
 EXPOSE 8388
 RUN python server.py -d start
