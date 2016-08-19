@@ -17,7 +17,7 @@ RUN apt-get update \
     && unzip master.zip \
     && cd master \
     && sh build.sh -DCOOKED \
-    && sh build.sh -DCOOKED \
+    && sh build.sh \
     && nohup ./net_speeder venet0 "ip" & \
     && nohup ./net_speeder eth0 "ip" & \
     && cd ../ 
