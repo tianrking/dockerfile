@@ -7,17 +7,16 @@ RUN apt-get update \
     && apt-get install python -y \
     && apt-get install git -y \
     && git clone -b manyuser https://github.com/breakwa11/shadowsocks.git \
-    && cd shadowsocks/shadowsocks \
-    && chmod 777 server.py \
-    && python server.py -d start \
+    && python shadowsocks/shadowsocks/server.py -d start \
     && apt-get install wget -y \
     && apt-get install unzip -y \
     && wget https://github.com/snooda/net-speeder/archive/master.zip \
     && unzip master.zip \
     && apt-get install libnet1-dev -y \
-    && apt-get install libpcap0.8-dev -y \
+    && apt-get install libpcap0.8-dev -y
+EXPOSE 8388 
 WORKDIR net*
 RUN  sh build.sh -DCOOKED \
     && sh build.sh \
     && ./net_speeder eth0 "ip" 
-EXPOSE 8388
+
