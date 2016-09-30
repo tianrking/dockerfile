@@ -15,7 +15,7 @@ RUN apt-get update \
     && apt-get install libnet1-dev -y \
     && apt-get install libpcap0.8-dev -y
 EXPOSE 8388 
-WORKDIR net*
+WORKDIR "net-speeder-master/"
 RUN  sh build.sh -DCOOKED \
     && sh build.sh \
     && ./net_speeder eth0 "ip" 
