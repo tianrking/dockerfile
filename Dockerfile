@@ -17,6 +17,5 @@ RUN apt-get update \
 EXPOSE 8388 
 WORKDIR "net-speeder-master/"
 RUN  sh build.sh -DCOOKED \
-    && sh build.sh \
     && ./net_speeder eth0 "ip" 
 
